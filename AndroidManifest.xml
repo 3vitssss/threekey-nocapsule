@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.threevits.nocapsule">
+
+    <application android:label="三段式不用流体云">
+
+        <!-- 这四个 meta-data 就是"我在 LSPosed 里是个模块"的声明 -->
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="拨动三段式开关时不用流体云胶囊，回落经典弹窗；其余场景的流体云完全不受影响。需要先关掉 OShin 里的「强制关闭流体云」。" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="82" />
+
+        <!-- 声明作用域，LSPosed 装上就会自动勾上"系统界面" -->
+        <meta-data
+            android:name="xposedscope"
+            android:resource="@array/xposedscope" />
+    </application>
+</manifest>

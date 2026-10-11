@@ -1,0 +1,11 @@
+# 构建产物。build.sh 每次都会整个删掉重建，没有任何提交价值
+build/
+
+# APK 和签名产物
+*.apk
+*.idsig
+*.jar
+
+# 签名钥匙。真的在 ../lsposed-tutorial/debug.keystore，别提交
+*.keystore
+*.jks
