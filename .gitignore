@@ -4,8 +4,9 @@ build/
 # APK 和签名产物
 *.apk
 *.idsig
-*.jar
 
-# 签名钥匙。真的在 ../lsposed-tutorial/debug.keystore，别提交
+# 签名钥匙。build.sh 缺失时会自动生成一个，别提交
 *.keystore
 *.jks
+
+# tools/ 里从 Maven 下的那些 jar 由 tools/.gitignore 管

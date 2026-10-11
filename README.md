@@ -68,9 +68,20 @@ mDialog.show();
 adb install -r build/module.apk
 ```
 
-手搓构建，不用 Gradle。工具链默认借 `../lsposed-tutorial/tools/`
-（kotlinc 2.4.20 + LSPosed api-82），要搬走的话设 `TOOLS_DIR` 环境变量。
-签名的钥匙同理借 `../lsposed-tutorial/debug.keystore`，设 `KEYSTORE` 可覆盖。
+手搓构建（kotlinc + d8 + aapt2），不用 Gradle。**只需要自备 Android SDK**，其余全自动：
+
+| 依赖 | 怎么来 |
+|---|---|
+| `build-tools;34.0.0` + `platforms;android-34` | 自备，用 `ANDROID_SDK_ROOT` 指向 SDK（默认 `~/Android/Sdk`） |
+| Kotlin 编译器 2.4.20 | **首次构建自动从 Maven Central 下到 `./tools/`**（约 63 MB，之后走缓存） |
+| Xposed API（`tools/api-82.jar`，25 KB） | 随仓库提交，不用管 |
+| 签名钥匙 | 缺失时自动生成到项目根的 `debug.keystore`（已在 `.gitignore` 里） |
+
+想用自己的钥匙设 `KEYSTORE`，工具链想放别处设 `TOOLS_DIR`。
+
+## 许可证
+
+MIT
 
 ## 装上之后
 

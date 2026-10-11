@@ -1,0 +1,5 @@
+# Kotlin 编译器那一套是从 Maven Central 下的（build.sh 首次构建自动拉），
+# 总共 ~63 MB，塞进仓库不合适。
+*
+!api-82.jar
+!.gitignore
